@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+footer{
+  position: relative;
+  background: #000;
+  bottom: 0;
+  width: 100vw;
+  height: 35vh;
+  color: white;
+  /* overflow: hidden; */
+  font-family: Roboto;
+}
+footer div{
+    position: relative;
+    display: inline-block;
+}
+footer h3{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    opacity: .2;
+}
+footer .blockText1{
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100px;
+}
+footer .blockText1 p{
+    font-size: 150%;
+}
+
+footer .blockText2{
+    position: absolute;
+    right: 100px;
+}
+footer .blockText2 img{
+    width: 80px;
+    filter: grayscale(100%);
+    margin: 5px;
+}
+footer .blockText2 img:hover{
+    filter: grayscale(0);
+}
+footer .blockText2 p:nth-child(1),
+footer .blockText2 p:nth-child(3),
+footer .blockText2 p:nth-child(5){
+    opacity: 0.4;
+}
+footer .blockText2 p{
+    position: relative;
+    text-align: end;
+    right: 60px;
+    font-size: 120%;
+}
