@@ -1,5 +1,9 @@
 import React from 'react';
 import s from './Login.module.css';
+import facebookSvg from '../../assets/img/facebook.svg';
+import googleSvg from '../../assets/img/google.svg';
+
+
 const Login = () => {
     return (
         <div className={s.body}>
@@ -20,10 +24,10 @@ const Login = () => {
                 <p className={s.p1}>Войти через:</p>
                 <div>
                     <a href="">
-                        <img src="./img/google.svg" alt="google" />
+                        <img src={googleSvg} alt="google" />
                     </a>
                     <a href="">
-                        <img src="./img/facebook.svg" alt="facebook" />
+                        <img src={facebookSvg} alt="facebook" />
                     </a>
                 </div>
                 <p className={s.p1}>Или</p>

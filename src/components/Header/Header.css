@@ -7,17 +7,18 @@ header {
   left: 0;
   width: 100vw;
   position: absolute;
-  height: 20vh;
+  height: calc(20vh + 20px);
   z-index: 3;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.6);
+  background: #000;
   transition: .6s background;
+  display: flex;
 }
 
 .logo {
   top: 0;
   position: absolute;
-  font-family: arial;
+  font-family: "Ubuntu", arial;
   width: 100vw;
 }
 
@@ -77,28 +78,35 @@ nav {
   position: absolute;
   bottom: 0px;
   display: flex;
-  justify-content: center;
   align-items: center;
   width: 100vw;
   height: calc(100% - 100px);
 }
 
+header div:nth-child(1) {
+  margin-left: auto;
+}
+
 header div:nth-child(2) {
-  position: absolute;
-  right: 100px;
+  position: relative;
   display: flex;
   height: 100%;
   align-items: center;
+  margin-right: 60px;
 }
 
 nav a {
   position: relative;
   color: white;
   text-decoration: none;
-  margin-left: 20px;
+  margin-right: 20px;
   font-size: 1vw;
   overflow: hidden;
-  font-family: calibri;
+  font-family: calibri, arial;
+}
+
+nav a.active {
+  opacity: .5;
 }
 
 nav a::before {
@@ -122,10 +130,11 @@ nav a:hover::before {
   transform: scaleX(1);
 }
 
-nav .cart, nav .user {
-  height: 40%;
+nav .cart, nav .user, nav .settings, nav .search {
+  height: 80%;
   display: flex;
   align-items: center;
+  justify-content: center;
   background: none;
   border: none;
   cursor: pointer;
@@ -134,13 +143,49 @@ nav .cart, nav .user {
   outline: none;
 }
 
-nav .cart img, nav .user img {
-  height: 100%;
+nav .cart span {
+  position: absolute;
+  color: white;
+  background: #24acf2;
+  padding: 5px 9px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+nav .search {
+  display: flex;
+  align-items: center;
+}
+
+nav .search img {
+  position: relative;
+  right: 0;
+}
+
+nav .search input {
+  position: relative;
+  border-radius: 20px;
+  height: 70%;
+  border: none;
+  outline: none;
+  transition: .4s;
+  transform: scaleX(0);
+  transform-origin: 100% 0;
+  margin-right: 10px;
+}
+
+nav .search input.active {
+  transform: scaleX(1);
+}
+
+nav .cart img, nav .user img, nav .settings img, nav .search img {
+  height: 50%;
   filter: invert(1);
 }
 
-nav .user:hover, nav .cart:hover {
-  opacity: .6;
+nav .user:hover, nav .cart:hover, nav .settings:hover, nav .search:hover img {
+  opacity: .4;
 }
 
 nav .moving {
@@ -164,4 +209,10 @@ nav .moving.scrolled {
 nav .moving:hover {
   color: #24ACF2;
   ;
+}
+
+@media screen and (max-width: 600px) {
+  nav .cart img, nav .user img, nav .settings img {
+    height: 80%;
+  }
 }
