@@ -8,6 +8,7 @@
     overflow-y: scroll;
     transition: .6s;
     font-family: "Ubuntu", arial;
+    border-radius: 40px 0 0 40px;
 }
 
 .wrapper::-webkit-scrollbar {

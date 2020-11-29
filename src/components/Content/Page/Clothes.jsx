@@ -14,10 +14,12 @@ function Clothes(props) {
                 newArr.push(i)
             }
         })
+        
         return newArr.map((c, index) => <BlockClothes key={`${c.name}_${index}`} {...c} />);
+    
     }
 
-    const blocksDetails = props.items.map((items, index) => (<Route key={index} path={`/${items.id}`} render = {() => <Detail {...items} />} />) )
+    const blocksDetails = props.items.map((items, index) => (<Route key={index} exact path={`/${items.id}`} render = {() => <Detail {...items} />} />) )
 
     const path = [
         { path: "cap" },
@@ -30,7 +32,6 @@ function Clothes(props) {
     ]
 
     const blockRoute = path.map((path, index) => (<Route key={index} exact path={`/${path.path}`} render={() => blockItems(`${path.path}`)} />))
-
     return (
         <div>
             { blocksDetails}

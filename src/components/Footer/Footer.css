@@ -9,6 +9,9 @@ footer{
   /* overflow: hidden; */
   font-family: Roboto;
 }
+footer.whiteTheme{
+    filter: invert(1);
+}
 footer div{
     position: relative;
     display: inline-block;

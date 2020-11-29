@@ -24,7 +24,7 @@ const OrderBlock = (props) => {
                     {mapSize}
                 </div>
                 <div className={s.score}>
-                    <p>1</p>
+                    <p>{props.score}</p>
                     <button className={s.minus}>-</button>
                     <button className={s.plus}>+</button>
                 </div>

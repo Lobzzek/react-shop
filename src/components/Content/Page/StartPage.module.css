@@ -8,8 +8,7 @@ div.wrapper {
 }
 .slider{
     position: absolute;
-    width: 60vw;
-    height: 90vh;
+    width: 40vw;
     left: 50%;
     top: 40%;
     transform: translate(-50%, -50%)

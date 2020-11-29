@@ -119,6 +119,13 @@ section {
     outline: none;
     color: #000;
     text-decoration: none;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.next.active, section a.active {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .next:hover, section a:hover {

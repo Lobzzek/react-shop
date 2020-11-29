@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { Header, Footer, Content, Cart, User, Checkout } from "./components";
+import { Header, Footer, Content, Cart, User} from "./components";
 // import { Route } from "react-router-dom";
 import { useDispatch} from 'react-redux';
 import { setClothes } from './Redux/actions/clothes';
@@ -36,8 +36,7 @@ const App = () => {
       .then(json => {
         dispatch(setClothes(json.clothes));
         dispatch(setImgSlider(json.imgSlider));
-
-      }) 
+      })
   }, [])
 
 

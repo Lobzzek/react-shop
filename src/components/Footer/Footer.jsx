@@ -4,10 +4,12 @@ import mastercardSvg from '../../assets/img/mastercard.svg';
 import paypalSvg from '../../assets/img/paypal.svg';
 import privatSvg from '../../assets/img/privat.svg';
 import visaSvg from '../../assets/img/visa.svg';
+import { useSelector } from 'react-redux'
 
 let Footer = () => {
+    const state = useSelector(state => state.theme.value)
     return (
-        <footer>
+        <footer className={state === "white" ? "whiteTheme" : ""}>
             <div className="blockText1">
                 <p>ReactClothes</p>
                 <p>©2020, ReactClothes.com</p>

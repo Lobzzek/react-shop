@@ -24,7 +24,13 @@
 .slider {
     position: relative;
     width: 40vw;
-    background: red;
+    display: flex;
+    flex-direction: column;
+}
+.slider pre{
+    font-size: 200%;
+    color: white;
+    align-self: center;
 }
 
 .info {
@@ -51,6 +57,10 @@
 .info p {
     text-align: center;
     font-size: 120%;
+}
+.id{
+    opacity: .6;
+    text-decoration: underline;
 }
 
 .info .color span {
