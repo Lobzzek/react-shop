@@ -1,6 +1,3 @@
-body {
-  scroll-behavior: smooth;
-}
 
 header {
   top: 0;
@@ -82,23 +79,62 @@ nav {
   bottom: 0px;
   display: flex;
   align-items: center;
+  justify-content: space-around;
   width: 100vw;
   height: calc(100% - 100px);
 }
 
-header div:nth-child(1) {
-  margin-left: auto;
+nav .menu {
+  height: 36px;
+  width: 40px;
+  position: relative;
+  cursor: pointer;
+  display: none;
+  margin-left: 10px;
 }
 
-header div:nth-child(2) {
+nav .menu div {
+  width: 40px;
+  height: 4px;
+  background: white;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 16px;
+}
+
+nav .menu div::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -12px;
+  left: 0;
+  background: white;
+}
+
+nav .menu div::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: -12px;
+  left: 0;
+  background: white;
+}
+
+nav .menu:hover {
+  opacity: .4;
+}
+
+header div:nth-child(4) {
   position: relative;
   display: flex;
   height: 100%;
   align-items: center;
-  margin-right: 60px;
 }
 
-nav a {
+nav .links a {
   position: relative;
   color: white;
   text-decoration: none;
@@ -335,7 +371,7 @@ nav .search .result {
 }
 
 nav .search .result.active {
-  visibility: visible ;
+  visibility: visible;
 }
 
 nav .search .result a {
@@ -368,30 +404,72 @@ nav .search .result a p {
 }
 
 nav .moving {
-  font-family: arial;
-  transform: scale(1.7);
-  transition: .6s left;
+  font-family: "Ubuntu";
+  font-size: 150%;
+  transition: .6s opacity;
   cursor: pointer;
-  color: white;
+  color: #000;
   text-decoration: none;
   background: none;
   border: none;
-  position: absolute;
-  left: -10%;
   outline: none;
+  background: white;
+  padding: 5px 13px;
+  border-radius: 50%;
+  opacity: 0;
 }
-
-nav .moving.scrolled {
-  left: 20px;
+nav .moving.scrolled{
+  opacity: 1;
 }
-
 nav .moving:hover {
   color: #24ACF2;
-  ;
 }
 
 @media screen and (max-width: 600px) {
-  nav .cart img, nav .user img, nav .settings img {
-    height: 80%;
+  nav .cart img, nav .user img, nav .settings img {}
+}
+
+@media screen and (max-width: 1059px) {
+  nav{
+    justify-content: space-evenly;
+  }
+  nav .menu {
+    display: block;
+  }
+  nav .links {
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100vw;
+    height: 100vh;
+    transition: .6s;
+    z-index: 1;
+    top: 0;
+    margin-right: auto;
+  }
+  nav .links.active{
+    display: flex;
+  }
+  nav .links a {
+    font-size: 200%;
+    margin: 20px 0;
+  }
+  nav {
+    justify-content: flex-end;
+  }
+  nav .moving {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 445px) {
+  .search input {
+    width: 70px;
+  }
+  nav .search .result {
+    width: 120%;
   }
 }

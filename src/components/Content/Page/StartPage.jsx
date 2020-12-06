@@ -8,7 +8,7 @@ const StartPage = (props) => {
         <div className={s.wrapper}>
             <img src="" alt="" className={s.fon} />
             <div className={s.slider}>
-                <Slider name="Предложения недели" img={props.imgSlider} />
+                <Slider name="Вкусные предложения" img={props.imgSlider} />
             </div>
             <div className={s.tagline}>
                 <h1>Жизнь в движении</h1>

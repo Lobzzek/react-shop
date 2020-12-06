@@ -26,7 +26,7 @@ function Detail(props) {
                 <h1>{props.name}</h1>
                 <p className={s.id}>ID: {props.id}</p>
                 <p className={s.description}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus quidem aspernatur neque mollitia rem beatae debitis, nesciunt perferendis ipsa iusto dolor in dicta libero velit numquam, facere ad cupiditate molestiae veniam quos, inventore impedit quo? Repellendus commodi placeat nihil debitis.</p>
-                <div className={s.color}>
+                {/* <div className={s.color}>
                     {mapColor}
                 </div>
                 <div className={s.size}>
@@ -36,7 +36,7 @@ function Detail(props) {
                     <p>1</p>
                     <button className={s.minus}>-</button>
                     <button className={s.plus}>+</button>
-                </div>
+                </div> */}
                 <button onClick={() => dispatch(setOrders(props))} className={s.add}>В корзину</button>
             </div>
         </div>

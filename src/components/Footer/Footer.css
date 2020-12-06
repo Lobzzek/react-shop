@@ -1,57 +1,73 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-footer{
-  position: relative;
-  background: #000;
-  bottom: 0;
-  width: 100vw;
-  height: 35vh;
-  color: white;
-  /* overflow: hidden; */
-  font-family: Roboto;
+footer {
+    position: relative;
+    background: #000;
+    width: 100vw;
+    color: white;
+    font-family: Roboto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: -30vh;
 }
-footer.whiteTheme{
+
+footer.whiteTheme {
     filter: invert(1);
 }
-footer div{
+
+footer>div {
     position: relative;
-    display: inline-block;
+    margin: 10px;
 }
-footer h3{
+
+footer h3 {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     bottom: 0;
     opacity: .2;
 }
-footer .blockText1{
-    top: 50%;
-    transform: translateY(-50%);
-    left: 100px;
-}
-footer .blockText1 p{
+
+footer .blockText1 p {
     font-size: 150%;
 }
 
-footer .blockText2{
-    position: absolute;
-    right: 100px;
+footer .blockText2 {
+    position: relative;
 }
-footer .blockText2 img{
+
+footer .blockText2 img {
     width: 80px;
     filter: grayscale(100%);
     margin: 5px;
 }
-footer .blockText2 img:hover{
+
+footer .blockText2 img:hover {
     filter: grayscale(0);
 }
-footer .blockText2 p:nth-child(1),
-footer .blockText2 p:nth-child(3),
-footer .blockText2 p:nth-child(5){
+
+footer .blockText2 p:nth-child(1), footer .blockText2 p:nth-child(3), footer .blockText2 p:nth-child(5) {
     opacity: 0.4;
 }
-footer .blockText2 p{
+
+footer .blockText2 p {
     position: relative;
     text-align: end;
-    right: 60px;
     font-size: 120%;
+}
+
+@media screen and (max-width: 800px) {
+    footer {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    footer .blockText1, footer .blockText2 p {
+        text-align: center;
+    }
+    footer .blockText2 img {
+        width: 60px;
+        filter: grayscale(100%);
+        margin: 5px;
+    }
 }

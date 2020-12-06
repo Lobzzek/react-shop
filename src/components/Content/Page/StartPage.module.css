@@ -1,18 +1,20 @@
-div.wrapper {
+.wrapper {
     width: 100vw;
-    min-height: 119.9vh;
+    height: 120vh;
     position: relative;
     left: 0;
     top: 0;
     overflow: hidden;
 }
-.slider{
+
+.slider {
     position: absolute;
-    width: 40vw;
+    width: 600px;
     left: 50%;
     top: 40%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
 }
+
 .fon {
     width: 100%;
     height: 100%;
@@ -43,5 +45,26 @@ div.wrapper {
     transform: translate(-50%, -100%);
     font-family: 'Pacifico', cursive;
     font-weight: 100;
-    font-size: calc(24px + (16 + 16 * 0.7) * ((100vw - 425px) / 1280));
+    font-size: 3vw;
+}
+
+@media screen and (min-width: 1010px) {
+    .slider {
+        width: 800px;
+        height: 600px;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .slider {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .slider {
+        width: 300px;
+        height: 350px;
+    }
 }

@@ -104,27 +104,31 @@ const Checkout = (props) => {
             <img src={item.imgUrl} alt="" />
             <p className={s.name}>{item.name}</p>
             <p className={s.price}>{item.price} UAH</p>
-            <p className={s.count}>1 шт.</p>
+            <p className={s.count}>{item.score} шт.</p>
+            <p className={s.activeColor}>{item.selectedColor}</p>
+            <p className={s.activeSize}>{item.selectedSize}</p>
         </div>
     ))
     return (
         <div className={s.wrapper}>
 
-            {/* {props.items.length === 0 && (
+            {props.items.length === 0 && (
                     <h1>Невозможно оформить заказ</h1>
                 )
-            } */}
+            }
 
-            {/* {
-                props.items.length !== 0 && ( */}
+            {
+                props.items.length !== 0 && (
                     <>
                         <h1>Оформление заказа</h1>
                         <div className={s.goods}>
                             {mapGoods}
                         </div>
-                        {
-                            firstPage === true ? <FirstPage /> : <SecondPage />
-                        }
+                        <div className={s.body}>
+                            {
+                                firstPage === true ? <FirstPage /> : <SecondPage />
+                            }
+                        </div>
                         <section>
                             {
                                 firstPage ? 
@@ -136,8 +140,8 @@ const Checkout = (props) => {
                             <p>{firstPage ? "Шаг: 1 из 2" : "Шаг: 2 из 2" }</p>
                         </section>
                     </>
-                {/* )
-            } */}
+                 )
+            } 
 
         </div>
     )

@@ -74,7 +74,7 @@ const App = () => {
               classNames="animationRight"
               unmountOnExit
             >
-              <Cart />
+              <Cart closeCart={() => setShowCart(false)} />
             </CSSTransition>
           )}
         </TransitionGroup>

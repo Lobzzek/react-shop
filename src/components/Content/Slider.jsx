@@ -12,12 +12,12 @@ const Slider = (props) => {
     }
     let sliderImg;
     if (props.img.length === 2) {
-        sliderImg = props.img.map((items, index) => (<img key={index} className={index === 1 ? s.reverseImg : ""} src={items} alt="" />))
+        sliderImg = props.img.map((items, index) => (<div key={index}><img className={index === 1 ? s.reverseImg : ""} src={items} alt="" /></div>))
     } else if (typeof props.img[0] === "object") {
-        sliderImg = props.img.map((items, index) => (<NavLink key={index} to={`/${items.id}`}><img src={items.img} alt="" /></NavLink>));
+        sliderImg = props.img.map((items, index) => (<div key={index}><NavLink to={`/${items.id}`}><img src={items.img} alt="" /></NavLink></div>));
     }
     else {
-        sliderImg = props.img.map((items, index) => (<img key={index} src={items} alt="" />))
+        sliderImg = props.img.map((items, index) => (<div key={index}><img src={items} alt="" /></div>))
     }
 
     const dots = arr.map(dots =>
@@ -51,12 +51,12 @@ const Slider = (props) => {
             <button onClick={movePrev} className={s.prev} >&#10094;</button>
             <button className={s.next} onClick={moveNext}>&#10095;</button>
             <div className={s.pictures}>
-                <div className={s.pic} style={{ left: -moving + "%" }}>
+                <div className={s.pic} style={{ left: -moving + "%", width: props.img.length * 100 + "%" }}>
                     {sliderImg}
                 </div>
-                <div className={s.btn}>
-                    {dots}
-                </div>
+            </div>
+            <div className={s.btn}>
+                {dots}
             </div>
         </div>
     )

@@ -23,14 +23,17 @@ const Header = (props) => {
     const dispatch = useDispatch();
 
     //animation
-    const [showForm, setShowForm] = useState(false);
+    const [showForm, setShowForm] = useState(true);
     const changeStateForm = () => setShowForm(!showForm);
 
     const [showPopup, setShowPopup] = useState(false);
     const changeStatePopup = () => setShowPopup(!showPopup);
 
     let [showResult, setShowResult] = useState(false);
-    
+
+    const [showLinks, setShowLinks] = useState(false);
+    const changeStateLinks = () => setShowLinks(!showLinks);
+
     const [scroll, setScroll] = useState(0);
     const updatesScroll = () => {
         setScroll(window.scrollY);
@@ -44,7 +47,6 @@ const Header = (props) => {
 
     // search
     const input = React.useRef();
-    // console.log(input.current.value)
     const changeState = () => {
         let value = input.current.value;
         dispatch(setSearch(value));
@@ -83,7 +85,8 @@ const Header = (props) => {
                 <div className={`line ${scroll > 99 ? 'scrolled' : ' '}`}></div>
             </div>
             <nav>
-                <div>
+                <button onClick={() => window.scroll(0, 0)} className={`moving ${scroll > 99 ? 'scrolled' : ' '}`}>&uarr;</button>
+                <div onClick={changeStateLinks} className={showLinks ? "links active" : "links"}>
                     <NavLink activeClassName="chosen" to="/cap">ГОЛОВНЫЕ УБОРЫ</NavLink>
                     <NavLink activeClassName="chosen" to="/shirts">РУБАШКИ</NavLink>
                     <NavLink activeClassName="chosen" to="/t-shirts">ФУТБОЛКИ</NavLink>
@@ -91,6 +94,9 @@ const Header = (props) => {
                     <NavLink activeClassName="chosen" to="/trousers">ШТАНЫ</NavLink>
                     <NavLink activeClassName="chosen" to="/trainers">КРОССОВКИ</NavLink>
                     <NavLink activeClassName="chosen" to="/accessories">АКСЕССУАРЫ</NavLink>
+                </div>
+                <div onClick={changeStateLinks} className="menu">
+                    <div></div>
                 </div>
                 <div>
                     <button className="search">
@@ -121,7 +127,6 @@ const Header = (props) => {
                         <img onClick={changeStatePopup} src={settingsSvg} alt="" className={showPopup ? "active" : ""} />
                     </button>
                 </div>
-                <button onClick={() => window.scroll(0, 0)} className={`moving ${scroll > 99 ? 'scrolled' : ' '}`}>RC</button>
             </nav>
         </header>
     )

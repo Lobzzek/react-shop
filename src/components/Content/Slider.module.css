@@ -1,110 +1,108 @@
 .slider {
-    min-width: 350px;
-    width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-areas: "name name name" "prev pictures next" "btn btn btn";
 }
 
 .slider h1 {
-    top: 0;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: 'calibri';
-    font-weight: 100;
-    font-size: 3vw;
-    z-index: 2;
-    -webkit-text-stroke: 1px white;
-    color: rgba(0, 0, 0, 0);
-}
-
-.slider .prev, .slider .next {
-    display: block;
-    position: relative;
-    border: none;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    font-size: 250%;
-    cursor: pointer;
-    outline: none;
-}
-
-.slider .next {
-    order: 3;
-}
-
-.slider .next:hover, .slider .prev:hover {
-    background: #24ACF2;
+    grid-area: name;
+    font-family: "Ubuntu";
+    text-align: center;
     color: white;
 }
 
-.slider .pictures {
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    flex-direction: column;
-}
-
-.slider .pictures .pic {
+.slider .next {
+    grid-area: next;
     position: relative;
-    width: 500%;
-    transition: .6s;
+    margin: auto;
+    background: white;
+    border-radius: 50%;
+    display: inline;
+    border: none;
+    padding: 20px 24px;
+    outline: none;
     cursor: pointer;
 }
 
-.slider .pictures .pic img {
+.slider .prev {
+    grid-area: prev;
     position: relative;
-    width: calc(20% - 20px);
-    border-radius: 10px;
-    margin: 0 10px 0 10px;
-    transition: .3s;
-    max-height: 75%;
-
+    margin: auto;
+    background: white;
+    border-radius: 50%;
+    display: inline;
+    border: none;
+    padding: 20px 24px;
+    outline: none;
+    cursor: pointer;
 }
 
-.slider .pictures .pic img:hover {
-    opacity: .4;
+.slider .prevhover, .slider .next:hover {
+    background: #24acf2;
+    color: white;
 }
 
 .slider .btn {
+    grid-area: btn;
     position: relative;
-    width: 90%;
     display: flex;
-    margin-top: 20px;
     justify-content: center;
-    align-self: center;
+    align-items: center;
+    width: 70%;
+    margin: auto;
 }
 
 .slider .btn button {
-    flex-basis: 15%;
-    height: 10px;
-    margin-left: 10px;
+    margin: 0 2px;
     border: none;
-    cursor: pointer;
-    border-radius: 10px;
+    border-radius: 20px;
+    height: 8px;
     outline: none;
     transition: .6s;
-    box-shadow: inset 1px 1px 3px black;
-}
-
-.slider .btn button:hover {
-    opacity: .3;
+    flex-basis: 15%;
+    cursor: pointer;
 }
 
 .slider .btn button.active {
-    background: #24ACF2;
-    flex-grow: 2;
-    box-shadow: none;
+    flex-grow: 1;
+    background: #24acf2;
 }
 
-.slider .reverseImg {
-    transform: rotateY(180deg);
+.slider .pictures {
+    grid-area: pictures;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.slider .pic {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: .6s;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.slider .pic div {
+    position: relative;
+    height: 100%;
+    transition: .6s;
+    width: 100%;
+}
+
+.slider img {
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+}
+.reverseImg{
     filter: invert(1);
+    transform: rotateY(180deg);
 }

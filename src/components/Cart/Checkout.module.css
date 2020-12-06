@@ -1,13 +1,13 @@
 .wrapper {
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: row-reverse;
     left: 0;
     top: 0;
     width: 100vw;
-    height: 100vh;
+    height: 120vh;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .wrapper>h1 {
@@ -25,12 +25,13 @@
 }
 
 .goods {
-    width: 350px;
+    min-width: 400px;
     max-height: 400px;
-    border: 1px solid white;
     border-radius: 20px;
     overflow-x: hidden;
     overflow-y: auto;
+    position: relative;
+    border: 1px dashed white;
 }
 
 .goods::-webkit-scrollbar {
@@ -43,7 +44,7 @@
     height: 70px;
     display: flex;
     align-items: center;
-    margin: 10px 0;
+    margin: 10px 5px;
 }
 
 .goods div * {
@@ -60,11 +61,10 @@
     font-family: "Ubuntu";
 }
 
-.goods p.price {
-    padding: 0 10px;
-    border: 1px solid transparent;
-    border-right-color: white;
-    border-left-color: white;
+
+.goods p{
+    border-right: 1px solid white;
+    padding: 0 10px 0 10px;
 }
 
 .checkout h1 {
@@ -174,4 +174,14 @@ section p {
 
 .payment img:hover {
     opacity: .6;
+}
+
+@media screen and (max-width: 970px) {
+    .wrapper {
+        height: 120vh;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 200vh;
+    }
 }

@@ -15,21 +15,6 @@ const BlockClothes = (props) => {
                 <p className={s.price}>{props.price} UAH.</p>
             </div>
             <p className={s.name}>{props.name}</p>
-            <div className={s.info}>
-                <div className={s.size}>
-                    <p className={s.active}>M</p>
-                    <p>L</p> 
-                    <p>Xl</p>
-                    <p>XXL</p>
-                </div>
-
-                <div className={s.color}>
-                    <span className={s.active}></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <button className={s.add}></button>
-            </div>
                 <button onClick={() => dispatch(setOrders(props))}  className={s.button}>В корзину</button>
                 <NavLink className={s.button} to={`/${props.id}`} >Подробнее</NavLink>
         </div>

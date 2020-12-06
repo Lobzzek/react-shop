@@ -1,6 +1,6 @@
 .wrapper {
     position: fixed;
-    width: 40vw;
+    width: 475px;
     right: 0;
     top: 0;
     z-index: 5;
@@ -23,11 +23,23 @@
     height: 100vh;
 }
 
+.closeCart {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #800;
+    margin-top: 30px;
+    margin-left: 30px;
+    transform: scale(4) rotate(0deg);
+    align-self: flex-start;
+    outline: none;
+}
+
 .wrapper h1 {
     position: relative;
     color: black;
     font-size: calc(24px + (16 + 16 *0.7) * ((100vw - 320px) / 1280));
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .items {
@@ -46,7 +58,7 @@
     border-radius: 50px;
     box-shadow: 0 1px black;
     cursor: pointer;
-    font-size: calc(10px + (16 + 16 *0.7) * ((100vw - 320px) / 1280));
+    font-size: 2vw;
     border: 2px solid green;
     background: none;
     text-decoration: none;
@@ -64,11 +76,28 @@
     flex-direction: column;
     justify-self: center;
     align-items: center;
-    
 }
-.absenceItems p{
+
+.absenceItems p {
     text-decoration: underline;
 }
-.absenceItems img{
+
+.absenceItems img {
     width: 40%;
+}
+
+@media screen and (max-width: 600px) {
+    .orderPrice, .checkout {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .wrapper {
+        width: 100vw;
+        border-radius: 0;
+    }
+    .items {
+        width: 100%;
+    }
 }

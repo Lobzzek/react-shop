@@ -30,3 +30,8 @@
 .wrapper .register:focus {
     outline: none;
 }
+@media screen and  (max-width: 400px){
+    .wrapper{
+        width: 100vw;
+    }
+}

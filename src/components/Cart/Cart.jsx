@@ -4,11 +4,13 @@ import OrderBlock from './OrderBlock.jsx';
 import forecastSvg from './../../assets/img/forecast.svg';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeOrder } from './../../Redux/actions/cart';
+import { increment } from './../../Redux/actions/cart';
+import { decrement } from './../../Redux/actions/cart';
 import { NavLink } from 'react-router-dom';
 
 
 
-const Cart = () => {
+const Cart = (props) => {
     const dispatch = useDispatch();
 
     const state = useSelector(state => {
@@ -17,17 +19,17 @@ const Cart = () => {
         }
     });
 
-
     const blockOrders = state.orders.map((item, index) => (
-        <OrderBlock onClick={() => dispatch(removeOrder(item.id))} {...item} key={`${item.name}_${item.id}_${index}`} />
+        <OrderBlock color={state.orders.selectedColor} size={state.orders.selectedSize} decrement={() => dispatch(decrement(item))} increment={() => dispatch(increment(item))}  removeOrder={() => dispatch(removeOrder(item.id))} {...item} key={`${item.name}_${item.id}_${index}`} />
     ));
     let allPrice = 0;
     state.orders.map(item => {
-        allPrice += item.price
+        allPrice = allPrice + (item.price * item.score);
     })
     return (
         <div className={s.wrapper}>
             <div className={s.body}>
+                <button onClick={props.closeCart} className={s.closeCart}>&#10540;</button>
                 <h1>Корзина</h1>
 
                 {

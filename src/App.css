@@ -8,27 +8,20 @@ body {
 .wrapper {
   left: 0;
   background: #333;
-}
-
-.wrapper {
   overflow: hidden;
 }
 
-.emptySpace{
+.emptySpace {
   width: 100vw;
   height: calc(20vh + 20px);
 }
 
 .content {
-  position: relative;
   width: 100vw;
   background: #333;
-  min-height: 120vh;
+  position: relative;
 }
 
-.content.scrolled {
-  margin-top: calc(20vh + 20px);
-}
 
 .fon {
   display: block;

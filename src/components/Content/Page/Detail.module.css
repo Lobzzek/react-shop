@@ -1,6 +1,6 @@
 .wrapp {
     width: 100vw;
-    min-height: 119.9vh;
+    height: 100%;
     position: relative;
     left: 0;
     top: 0;
@@ -23,11 +23,12 @@
 
 .slider {
     position: relative;
-    width: 40vw;
+    height: 80vh;
     display: flex;
     flex-direction: column;
 }
-.slider pre{
+
+.slider pre {
     font-size: 200%;
     color: white;
     align-self: center;
@@ -58,7 +59,8 @@
     text-align: center;
     font-size: 120%;
 }
-.id{
+
+.id {
     opacity: .6;
     text-decoration: underline;
 }
@@ -140,4 +142,21 @@
     background: #24ACF2;
     border: 3px solid #24ACF2;
     box-shadow: none;
+}
+
+@media screen and (max-width: 800px) {
+    .wrapp {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .slider{
+        margin-top: 30px;
+        width: 90vw;
+    }
+}
+@media screen and (max-width: 435px){
+    .slider{
+        height: 60vh;
+    }
 }

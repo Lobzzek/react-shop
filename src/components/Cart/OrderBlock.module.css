@@ -13,6 +13,7 @@
 .blockItem .pic {
     position: relative;
     width: 45%;
+    min-width: 122px;
     height: 350px;
     border: 1px solid #333;
     margin: 20px 0 10px 10px;
@@ -61,15 +62,31 @@
 }
 
 .blockItem .color span {
+    display: inline-block;
     margin-left: 10px;
     font-size: 150%;
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
+    opacity: .3;
+    background: rgb(95, 95, 95);
+    position: relative;
+    overflow: hidden;
 }
 
 .blockItem .color span.active {
-    background: rgb(143, 143, 143);
+    opacity: 1;
+}
+
+.blockItem .color span.active:before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: #24acf2;
+    border-radius: 0 10px 0 20px;
+    position: absolute;
+    top: -1px;
+    right: -1px;
 }
 
 .blockItem .size {
@@ -84,7 +101,7 @@
 }
 
 .blockItem .size p.active {
-    background: rgb(143, 143, 143);
+    background: rgb(95, 95, 95);
     color: white;
 }
 
@@ -123,4 +140,14 @@
     border: none;
     cursor: pointer;
     outline: none;
+}
+
+@media screen and (max-width: 475px) {
+    .blockItem {}
+    .blockItem .pic {
+        width: 55%;
+    }
+    .blockItem .info {
+        width: 45%;
+    }
 }
