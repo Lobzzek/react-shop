@@ -1,41 +1,58 @@
 import React from 'react';
 import s from './Cart.module.css';
-
-const BlockItem = () => {
-    return (
-        <div className={s.blockItem}>
-            <button className={s.close}>&#10540;</button>
-            <img src="https://images-na.ssl-images-amazon.com/images/I/41Leu3gBUFL.jpg" alt=""></img>
-            <p className={s.name}>Clothes</p>
-            <p className={s.price}>1000 грн.</p>
-            <div className={s.score}>
-                <button className={s.minus}>-</button>
-                <p>1</p>
-                <button className={s.plus}>+</button>
-            </div>
-        </div>
-    )
-}
+import OrderBlock from './OrderBlock.jsx';
+import forecastSvg from './../../assets/img/forecast.svg';
+import { useSelector, useDispatch } from 'react-redux';
+import { removeOrder } from './../../Redux/actions/cart';
+import { increment } from './../../Redux/actions/cart';
+import { decrement } from './../../Redux/actions/cart';
+import { NavLink } from 'react-router-dom';
 
 
-const Cart = () => {
+
+const Cart = (props) => {
+    const dispatch = useDispatch();
+
+    const state = useSelector(state => {
+        return {
+            orders: state.cart.items,
+        }
+    });
+
+    const blockOrders = state.orders.map((item, index) => (
+        <OrderBlock color={state.orders.selectedColor} size={state.orders.selectedSize} decrement={() => dispatch(decrement(item))} increment={() => dispatch(increment(item))}  removeOrder={() => dispatch(removeOrder(item.id))} {...item} key={`${item.name}_${item.id}_${index}`} />
+    ));
+    let allPrice = 0;
+    state.orders.map(item => {
+        allPrice = allPrice + (item.price * item.score);
+    })
     return (
         <div className={s.wrapper}>
             <div className={s.body}>
+                <button onClick={props.closeCart} className={s.closeCart}>&#10540;</button>
                 <h1>Корзина</h1>
+
+                {
+                    state.orders.length === 0 &&
+                    <div className={s.absenceItems}>
+                        <p>Ваша корзина пустая</p>
+                        <img src={forecastSvg} alt="" />
+                    </div>
+                }
+
                 <div className={s.items}>
-                    <BlockItem />
-                    <BlockItem />
-                    <BlockItem />
-                    <BlockItem />
-                    <BlockItem />
-                    <BlockItem />
-                    <BlockItem />
-                    <BlockItem />
-                    <BlockItem />
+                    {blockOrders}
                 </div>
-                <p className={s.orderPrice}>Общая сумма заказа: ___</p>
-                <button className={s.checkout}>Оформить заказ &#10003;</button>
+
+                {
+                    state.orders.length !== 0
+                    &&
+                    <>
+                        <p className={s.orderPrice}>Общая сумма заказа: {allPrice} UAH.</p>
+                        <NavLink to="/checkout" className={s.checkout}>Оформить заказ &#10003;</NavLink>
+                    </>
+                }
+
             </div>
         </div>
     )

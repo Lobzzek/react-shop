@@ -7,15 +7,21 @@ body {
 
 .wrapper {
   left: 0;
+  background: #333;
+  overflow: hidden;
+}
+
+.emptySpace {
+  width: 100vw;
+  height: calc(20vh + 20px);
 }
 
 .content {
-  position: relative;
   width: 100vw;
   background: #333;
-  width: 100vw;
-  height: 120vh;
+  position: relative;
 }
+
 
 .fon {
   display: block;
@@ -96,19 +102,19 @@ body {
 
 @keyframes hideCart {
   from {
+    display: block;
     right: 0;
   }
   to {
     right: -75%;
+    display: none;
   }
 }
 
 .animationRight-enter-active {
-  animation: showCart .6s;
+  animation: showCart .6s forwards;
 }
+
 .animationRight-exit {
-  animation: hideCart .6s;
-}
-.animationRight-exit-active{
-  right: 0;
+  animation: hideCart .6s forwards;
 }

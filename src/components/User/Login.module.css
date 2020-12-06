@@ -50,11 +50,16 @@
     opacity: .8;
 }
 
-.body div:nth-child(3) a {
+.body div:nth-child(3) .forgot {
     color: #333;
     font-size: 120%;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
-
+datalist option{
+    opacity: 0;
+}
 .body .log {
     font-size: 200%;
     background: #000;

@@ -1,0 +1,108 @@
+.slider {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-areas: "name name name" "prev pictures next" "btn btn btn";
+}
+
+.slider h1 {
+    grid-area: name;
+    font-family: "Ubuntu";
+    text-align: center;
+    color: white;
+}
+
+.slider .next {
+    grid-area: next;
+    position: relative;
+    margin: auto;
+    background: white;
+    border-radius: 50%;
+    display: inline;
+    border: none;
+    padding: 20px 24px;
+    outline: none;
+    cursor: pointer;
+}
+
+.slider .prev {
+    grid-area: prev;
+    position: relative;
+    margin: auto;
+    background: white;
+    border-radius: 50%;
+    display: inline;
+    border: none;
+    padding: 20px 24px;
+    outline: none;
+    cursor: pointer;
+}
+
+.slider .prevhover, .slider .next:hover {
+    background: #24acf2;
+    color: white;
+}
+
+.slider .btn {
+    grid-area: btn;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+}
+
+.slider .btn button {
+    margin: 0 2px;
+    border: none;
+    border-radius: 20px;
+    height: 8px;
+    outline: none;
+    transition: .6s;
+    flex-basis: 15%;
+    cursor: pointer;
+}
+
+.slider .btn button.active {
+    flex-grow: 1;
+    background: #24acf2;
+}
+
+.slider .pictures {
+    grid-area: pictures;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.slider .pic {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: .6s;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.slider .pic div {
+    position: relative;
+    height: 100%;
+    transition: .6s;
+    width: 100%;
+}
+
+.slider img {
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+}
+.reverseImg{
+    filter: invert(1);
+    transform: rotateY(180deg);
+}

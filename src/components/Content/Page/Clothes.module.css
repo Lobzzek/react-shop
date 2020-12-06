@@ -1,0 +1,34 @@
+.blockContainer {
+    display: flex;
+    position: relative;
+    top: 20px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 200px;
+    background: #333;
+    width: 100%;
+    overflow: hidden;
+    transition: .4s;
+}
+
+.blockContainer * {
+    flex-basis: 0%;
+}
+
+/* .opacityShow-enter {
+    opacity: 0;
+}
+
+.opacityShow-enter-active {
+    opacity: 1;
+    transition: .4s;
+}
+
+.opacityShow-exit {
+    opacity: 1;
+}
+
+.opacityShow-exit-active {
+    opacity: 0;
+    transition: .4s;
+} */
