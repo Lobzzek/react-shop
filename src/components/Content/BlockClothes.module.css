@@ -32,7 +32,7 @@
 }
 
 .blockClothes img {
-  background: url("https://crossplus.com.ua/content/images/42/muzhskie-krossovki-nike-air-max-720-black-14188692550352_small11.jpeg");
+  background: url("./../../assets/img/sneakers.jpeg");
   background-size: cover;
   background-position: center;
   box-shadow: 0 2px 4px black;
