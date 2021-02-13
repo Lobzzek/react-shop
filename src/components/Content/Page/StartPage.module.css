@@ -40,12 +40,13 @@
 
 .tagline h1 {
     position: absolute;
+    display: block;
+    white-space: nowrap;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, -100%) scale(1.2);
     font-family: 'Pacifico', cursive;
     font-weight: 100;
-    font-size: 3vw;
 }
 
 @media screen and (min-width: 1010px) {

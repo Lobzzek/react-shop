@@ -29,7 +29,6 @@ let Footer = () => {
                     <img src={visaSvg} alt="" />
                 </div>
             </div>
-            <h3>*Тестовый сайт*</h3>
         </footer>
     )
 }

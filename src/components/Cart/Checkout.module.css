@@ -61,8 +61,7 @@
     font-family: "Ubuntu";
 }
 
-
-.goods p{
+.goods p {
     border-right: 1px solid white;
     padding: 0 10px 0 10px;
 }
@@ -183,5 +182,17 @@ section p {
         justify-content: center;
         flex-direction: column;
         height: 200vh;
+    }
+}
+
+@media screen and (max-width: 465px) {
+    .goods {
+        transform: scale(.78);
+    }
+    .checkout {
+        transform: scale(.78);
+    }
+    .wrapper>h1{
+        font-size: 200%;
     }
 }

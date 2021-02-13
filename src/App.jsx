@@ -6,6 +6,7 @@ import { Header, Footer, Content, Cart, User} from "./components";
 import { useDispatch} from 'react-redux';
 import { setClothes } from './Redux/actions/clothes';
 import { setImgSlider } from './Redux/actions/imgSlider'
+import jsonData from './db.js';
 
 const App = () => {
   //animation
@@ -31,12 +32,8 @@ const App = () => {
 
   //get data of fake server (JSON file)
   useEffect(() => {
-    fetch("http://localhost:3000/db.json")
-      .then(rest => rest.json())
-      .then(json => {
-        dispatch(setClothes(json.clothes));
-        dispatch(setImgSlider(json.imgSlider));
-      })
+    dispatch(setClothes(jsonData.clothes));
+    dispatch(setImgSlider(jsonData.imgSlider));
   }, [])
 
 

@@ -20,15 +20,6 @@ footer>div {
     position: relative;
     margin: 10px;
 }
-
-footer h3 {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    opacity: .2;
-}
-
 footer .blockText1 p {
     font-size: 150%;
 }

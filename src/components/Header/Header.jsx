@@ -117,8 +117,8 @@ const Header = (props) => {
                     </button>
                     <button href="#" className="settings">
                         <div className={showPopup ? "popup active" : "popup"}>
-                            <NavLink to="/we" href="#">О нас&#9786;</NavLink>
-                            <NavLink to="/help" href="#">Помощь &#9990;</NavLink>
+                            <NavLink to="/we" href="#">О нас</NavLink>
+                            <NavLink to="/help" href="#">Помощь</NavLink>
                             <label className="switch">
                                 <input onClick={changeTheme} ref={checkbox} type="checkbox" /> 
                                 <span className="slider round"></span>

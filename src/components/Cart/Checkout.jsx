@@ -13,31 +13,31 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const FirstPage = () => {
     const name = React.useRef(),
-          tel = React.useRef(), 
-          email = React.useRef(),
-          sity = React.useRef()
+        tel = React.useRef(),
+        email = React.useRef(),
+        sity = React.useRef()
     const dispatch = useDispatch();
     const [count, setCount] = React.useState(0)
     const checkInput = (input, reg, flag) => {
         const regexp = new RegExp(reg, flag)
         let i = 1;
-        if (!regexp.test(input.current.value)){
+        if (!regexp.test(input.current.value)) {
             input.current.style.border = "1px solid red";
             input.current.style.color = "red";
 
-            if (input.current.hasAttribute("right")){
+            if (input.current.hasAttribute("right")) {
                 input.current.removeAttribute("right")
             }
         } else if (name.current.hasAttribute("right") &&
-        tel.current.hasAttribute("right") &&
-        email.current.hasAttribute("right") && 
-        sity.current.hasAttribute("right")){
+            tel.current.hasAttribute("right") &&
+            email.current.hasAttribute("right") &&
+            sity.current.hasAttribute("right")) {
             dispatch(setCheckInput("yes"));
         }
-        else{
+        else {
             input.current.style.border = "1px solid green";
             input.current.style.color = "green";
-            
+
             if (!input.current.hasAttribute("right")) {
                 input.current.setAttribute("right", "yes");
             }
@@ -53,7 +53,7 @@ const FirstPage = () => {
                 <h1>Введите данные</h1>
                 <div>
                     <label htmlFor="">ФИО</label>
-                    <input placeholder="Денис Денисевич Денисов" onChange={() => checkInput(name, "^[А-Я][а-я]+ [А-Я][а-я]+ [А-Я][а-я]+$", "" )} ref={name} required type="name" />
+                    <input placeholder="Денис Денисевич Денисов" onChange={() => checkInput(name, "^[А-Я][а-я]+ [А-Я][а-я]+ [А-Я][а-я]+$", "")} ref={name} required type="name" />
                 </div>
                 <div>
                     <label htmlFor="">Телефон</label>
@@ -79,10 +79,10 @@ const SecondPage = () => {
             <h1>Выбирите способ оплаты</h1>
             <div>
                 <p>Безналичный</p>
-                <img src={mastercardSvg} alt="" />
-                <img src={privatSvg} alt="" />
-                <img src={paypalSvg} alt="" />
-                <img src={visaSvg} alt="" />
+                <NavLink to="/" ><img src={mastercardSvg} alt="" /></NavLink>
+                <NavLink to="/" ><img src={privatSvg} alt="" /></NavLink>
+                <NavLink to="/" ><img src={paypalSvg} alt="" /></NavLink>
+                <NavLink to="/" ><img src={visaSvg} alt="" /></NavLink>
             </div>
             <div>
                 <p>Наличными</p>
@@ -113,8 +113,8 @@ const Checkout = (props) => {
         <div className={s.wrapper}>
 
             {props.items.length === 0 && (
-                    <h1>Невозможно оформить заказ</h1>
-                )
+                <h1>Невозможно оформить заказ</h1>
+            )
             }
 
             {
@@ -131,17 +131,17 @@ const Checkout = (props) => {
                         </div>
                         <section>
                             {
-                                firstPage ? 
-                                <button onClick={changeStatePage} className={state === "yes" ? `${s.next} ${s.active}` : s.next}>Далее</button> 
-                                : 
+                                firstPage ?
+                                    <button onClick={changeStatePage} className={state === "yes" ? `${s.next} ${s.active}` : s.next}>Далее</button>
+                                    :
                                     <NavLink to="/">Обработать</NavLink>
                             }
-                            
-                            <p>{firstPage ? "Шаг: 1 из 2" : "Шаг: 2 из 2" }</p>
+
+                            <p>{firstPage ? "Шаг: 1 из 2" : "Шаг: 2 из 2"}</p>
                         </section>
                     </>
-                 )
-            } 
+                )
+            }
 
         </div>
     )
