@@ -191,6 +191,10 @@ section p {
     }
     .checkout {
         transform: scale(.78);
+        margin: 0px;
+    }
+    .goods{
+        margin: 0px;
     }
     .wrapper>h1{
         font-size: 200%;

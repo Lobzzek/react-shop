@@ -49,7 +49,7 @@ const Cart = (props) => {
                     &&
                     <>
                         <p className={s.orderPrice}>Общая сумма заказа: {allPrice} UAH.</p>
-                        <NavLink to="/checkout" className={s.checkout}>Оформить заказ &#10003;</NavLink>
+                        <NavLink to="/checkout" onClick={props.closeCart} className={s.checkout}>Оформить заказ &#10003;</NavLink>
                     </>
                 }
 
