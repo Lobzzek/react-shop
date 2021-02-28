@@ -14,7 +14,13 @@ const App = () => {
 
   const [showForm, setShowForm] = useState(false);
   const [showCart, setShowCart] = useState(false);
-  const changeForm = () => setShowForm(!showForm);
+  const changeForm = () => {
+    if (localStorage.getItem("logged") === "true") {
+      alert('Вы уже зарегистрированы')
+    } else {
+      setShowForm(!showForm)
+    }
+  } 
   const changeCart = () => setShowCart(!showCart);
   const hideCartAndForm = () => {
     setShowForm(false);

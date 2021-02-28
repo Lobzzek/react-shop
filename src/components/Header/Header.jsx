@@ -25,6 +25,8 @@ const Header = (props) => {
     //animation
     const [showForm, setShowForm] = useState(true);
     const changeStateForm = () => setShowForm(!showForm);
+    
+    
 
     const [showPopup, setShowPopup] = useState(false);
     const changeStatePopup = () => setShowPopup(!showPopup);

@@ -9,9 +9,10 @@
 
 .slider h1 {
     grid-area: name;
-    font-family: "Ubuntu";
-    text-align: center;
+    font-family: "ubuntu";
+    transform: skew(-10deg);
     color: white;
+    text-align: center;
 }
 
 .slider .next {
@@ -102,7 +103,8 @@
     transform: translateX(-50%);
     border-radius: 20px;
 }
-.reverseImg{
+
+.reverseImg {
     filter: invert(1);
     transform: rotateY(180deg);
 }

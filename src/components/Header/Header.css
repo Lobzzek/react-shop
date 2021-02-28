@@ -1,10 +1,9 @@
-
 header {
   top: 0;
   left: 0;
   width: 100vw;
   position: absolute;
-  height: calc(20vh + 20px);
+  height: 165px;
   z-index: 3;
   background: #000;
   transition: .6s background;
@@ -91,6 +90,7 @@ nav .menu {
   cursor: pointer;
   display: none;
   margin-left: 10px;
+  margin-right: auto;
 }
 
 nav .menu div {
@@ -178,7 +178,6 @@ nav .cart, nav .user, nav .settings, nav .search {
   border: none;
   cursor: pointer;
   display: block;
-  margin-right: 20px;
   outline: none;
   position: relative;
 }
@@ -215,7 +214,7 @@ nav .search img {
 
 nav .search input {
   position: relative;
-  border-radius: 20px;
+  border-radius: 200px;
   height: 70%;
   border: none;
   outline: none;
@@ -418,19 +417,17 @@ nav .moving {
   border-radius: 50%;
   opacity: 0;
 }
-nav .moving.scrolled{
+
+nav .moving.scrolled {
   opacity: 1;
 }
+
 nav .moving:hover {
   color: #24ACF2;
 }
 
-@media screen and (max-width: 600px) {
-  nav .cart img, nav .user img, nav .settings img {}
-}
-
 @media screen and (max-width: 1059px) {
-  nav{
+  nav {
     justify-content: space-evenly;
   }
   nav .menu {
@@ -450,7 +447,7 @@ nav .moving:hover {
     top: 0;
     margin-right: auto;
   }
-  nav .links.active{
+  nav .links.active {
     display: flex;
   }
   nav .links a {
@@ -467,9 +464,12 @@ nav .moving:hover {
 
 @media screen and (max-width: 445px) {
   .search input {
-    width: 70px;
+    width: 100px;
   }
-  nav .search .result {
-    width: 120%;
+  nav .cart, nav .user, nav .settings, nav .search {
+    height: 60%;
+    margin-right: 5px;
   }
 }
+
+@media screen and (max-width: 400px) {}

@@ -69,6 +69,7 @@ datalist option{
     border-radius: 30px;
     border: 1px solid #000;
     margin: auto;
+    outline: none;
 }
 
 .body .log:hover {

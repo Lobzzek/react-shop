@@ -25,7 +25,11 @@ const cartReducer = (state = initialState, action) => {
                 items: state.items.filter(item => item.id !== action.payload),
                 countItems: state.countItems - (1 * state.items.find(el => el.id === action.payload).score),
             }
-        break;
+        case "REMOVE_ALL_FROM_CART":
+            return {
+                items: [],
+                countItems: 0, 
+            }
         case 'INCREMENT':
             action.payload.score += 1; 
             state.countItems += 1;

@@ -1,18 +1,16 @@
 .wrapper {
     width: 100vw;
-    height: 120vh;
     position: relative;
-    left: 0;
-    top: 0;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .slider {
-    position: absolute;
+    position: relative;
     width: 600px;
-    left: 50%;
-    top: 40%;
-    transform: translate(-50%, -50%);
 }
 
 .fon {
@@ -30,9 +28,9 @@
 }
 
 .tagline {
-    position: absolute;
+    position: relative;
     width: 100vw;
-    height: 10%;
+    height: 80px;
     background: white;
     bottom: 0;
     left: 0;

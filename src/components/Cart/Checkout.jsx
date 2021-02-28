@@ -9,6 +9,7 @@ import poshtaSvg from '../../assets/img/poshta.svg';
 import visaSvg from '../../assets/img/visa.svg';
 import { setCheckInput } from './../../Redux/actions/checkInput.js';
 import { useDispatch, useSelector } from 'react-redux';
+import { removeAllFromCart } from './../../Redux/actions/cart.js';
 
 
 const FirstPage = () => {
@@ -17,6 +18,7 @@ const FirstPage = () => {
         email = React.useRef(),
         sity = React.useRef()
     const dispatch = useDispatch();
+
     const [count, setCount] = React.useState(0)
     const checkInput = (input, reg, flag) => {
         const regexp = new RegExp(reg, flag)
@@ -74,19 +76,24 @@ const FirstPage = () => {
 }
 
 const SecondPage = () => {
+    const dispatch = useDispatch();
+    const process = () =>{
+        alert("Спасибо. Мы обрабатываем ваш заказ");
+        dispatch(removeAllFromCart());
+    }
     return (
         <div className={s.payment}>
             <h1>Выбирите способ оплаты</h1>
             <div>
                 <p>Безналичный</p>
-                <NavLink to="/" ><img src={mastercardSvg} alt="" /></NavLink>
-                <NavLink to="/" ><img src={privatSvg} alt="" /></NavLink>
-                <NavLink to="/" ><img src={paypalSvg} alt="" /></NavLink>
-                <NavLink to="/" ><img src={visaSvg} alt="" /></NavLink>
+                <NavLink onClick={process} to="/" ><img src={mastercardSvg} alt="" /></NavLink>
+                <NavLink onClick={process} to="/" ><img src={privatSvg} alt="" /></NavLink>
+                <NavLink onClick={process} to="/" ><img src={paypalSvg} alt="" /></NavLink>
+                <NavLink onClick={process} to="/" ><img src={visaSvg} alt="" /></NavLink>
             </div>
             <div>
                 <p>Наличными</p>
-                <img src={poshtaSvg} alt="" />
+                <NavLink onClick={process} to="/" ><img src={poshtaSvg} alt="" /></NavLink>
             </div>
         </div>
     )

@@ -3,7 +3,9 @@ export const setOrders = items => ({
     payload: items,
     id: items.id
 })
-
+export const removeAllFromCart = () => ({
+    type: "REMOVE_ALL_FROM_CART"
+})
 export const removeOrder = id => ({
     type: "REMOVE_IN_CART",
     payload: id
